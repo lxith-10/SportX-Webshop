@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SportX - Dein Sportshop</title>
+    <link rel="icon" type="image/png" href="/WebTech/img/logo.png">
+    <link rel="stylesheet" href="/WebTech/CSS/mystyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>		
+	  <div class="header-bar">		
+		<a href="index.html"class="logo" title="zur Startseite wechseln">&#127942 SportX </a>
+            <div class="search-container">
+                <input type="text" placeholder="Suche nach Produkten...&#128270">
+            </div>
+            <div class="action-buttons">
+                <button title="Favoriten">&#10084;</button>
+                <button title="Mein Konto">&#128100;</button>
+                <button title="Warenkorb">&#128722;</button>
+                <button id="theme-toggle" title="Design wechseln">&#127769;</button>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li class="dropdown">
+                    <a href="#">Sportbekleidung</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="trikotList.html">Trikots</a></li>
+                    
+                        <li><a href="#">Socken</a></li>
+                        <li><a href="#">Handschuhe</a></li>
+                        <li><a href="#">Trainingsanzüge</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Fußballschuhe</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Nike</a></li>
+                        <li><a href="#">Adidas</a></li>
+                        <li><a href="#">Puma</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Zubehör</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Schienbeinschoner</a></li>
+                        <li><a href="#">Fußbälle</a></li>
+                        <li><a href="#">Sporttaschen</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#">Sale %</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Sportbekleidung</a></li>
+                        <li><a href="#">Fußballschuhe</a></li>
+                        <li><a href="#">Zubehör</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Bereit für dein nächstes Spiel?</h1>
+        <p>Shoppe jetzt Ausrüstung wie die Profis – stark, schnell und stylisch!</p>
+        <a href="#" class="cta">Jetzt entdecken</a>
+    </section>
+
+    <section class="produkte">
+        <h2>&#128293 Highlights der Woche</h2>
+        <div class="produkt-grid">
+            <div class="produkt">
+                <img src="https://via.placeholder.com/220" alt="Schuhe">
+                <h3>SpeedX Fußballschuh</h3>
+                <p>89,99 €</p>
+                <button>Zum Produkt</button>
+            </div>
+            <div class="produkt">
+                <img src="https://via.placeholder.com/220" alt="Trikot">
+                <h3>Team Trikot 2025</h3>
+                <p>49,99 €</p>
+                <button>Zum Produkt</button>
+            </div>
+            <div class="produkt">
+                <img src="https://via.placeholder.com/220" alt="Tasche">
+                <h3>Sporttasche Pro</h3>
+                <p>29,99 €</p>
+                <button>Zum Produkt</button>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 SportX. Powered by Leidenschaft für Sport.</p>
+        <p>
+         <a href="#">Kontakt</a> |
+         <a href="#">FAQ</a> |
+         <a href="#">Über uns</a></p> |
+         <a href="#">Impressum</a> |
+        </p>
+    </footer>
+	<script>
+		const toggleButton = document.getElementById('theme-toggle');
+		const currentTheme = localStorage.getItem('theme');
+	
+		if (currentTheme === 'light') {
+			document.body.classList.add('light-mode');
+			toggleButton.textContent = '\u{1F319}';
+		}
+	
+		toggleButton.addEventListener('click', () => {
+			document.body.classList.toggle('light-mode');
+			const theme = document.body.classList.contains('light-mode') ? 'light' : 'dark';
+			localStorage.setItem('theme', theme);
+			toggleButton.textContent = theme === 'light' ? '\u{1F319}' : '\u2600\uFE0F' ;
+		});
+	</script>
+</body>
+</html>
+
